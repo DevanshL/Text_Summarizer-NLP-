@@ -34,11 +34,11 @@ def gensim_summarizer(text):
 
         # Sort sentences by score in descending order and select top sentences
         sentence_scores.sort(reverse=True, key=lambda x: x[0])
-        num_sentences = min(5, len(sentence_scores))  # You can adjust the number of sentences in the summary
+        num_sentences = min(5, len(sentence_scores))  
         selected_sentences = sorted([sentences[sentence_scores[i][1]] for i in range(num_sentences)])
 
         # Join the selected sentences to form the summary
         summary = ' '.join(selected_sentences)
-        return summary  # Return summary as string
+        return summary  # string
     except Exception as e:
         return f"Error generating summary: {str(e)}"
